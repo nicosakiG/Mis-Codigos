@@ -1,0 +1,79 @@
+A = "A"
+a = "A"
+B = "B"
+b = "B"
+C = "C"
+c = "C"
+D = "D"
+d = "D"
+t = 0
+dtot=0
+trut = []
+pisos = [["Piso 1: ", A, B, C, D],
+         ["Piso 2: ", A, B, C, D],
+         ["Piso 3: ", A, B, C, D],
+         ["Piso 4: ", A, B, C, D],
+         ["Piso 5: ", A, B, C, D],
+         ["Piso 6: ", A, B, C, D],
+         ["Piso 7: ", A, B, C, D],
+         ["Piso 8: ", A, B, C, D],
+         ["Piso 9: ", A, B, C, D],
+         ["Piso10: ", A, B, C, D]]
+op = 0
+
+while op <5:
+  print("")
+  print("1. Comprar departamento.")
+  print("2. Mostrar departamentos disponibles.")
+  print("3. Ver listado de compradores.")
+  print("4. Mostrar ganancias totales.")
+  print("5. Salir.")
+  print("")
+  op = int(input("Seleccione una opcion: "))
+  print("")
+  if op == 1:
+    print(f"{pisos[0]} \n{pisos[1]} \n{pisos[2]} \n{pisos[3]} \n{pisos[4]} \n{pisos[5]} \n{pisos[6]} \n{pisos[7]} \n{pisos[8]} \n{pisos[9]}")
+    print("")
+    piso = int(input("seleccione piso:"))
+    dpto = input("sleccione departamento: ")
+    print("")
+    piso = piso - 1
+    if dpto==A or dpto == a:
+      dpto=1
+      t = t + 3800
+      dtot=dtot+dpto
+    if dpto==B or dpto== b:
+      dpto=2
+      t = t + 3000
+      dtot=dtot+dpto
+    if dpto==C or dpto== c:
+      dpto=3
+      t = t + 2800
+      dtot=dtot+dpto
+    if dpto==D or dpto== d:
+      dpto=4
+      dtot=dtot+dpto
+      t = t + 3500
+    pisos[piso][dpto] = "X"
+    rut = int(input("ingrese su rut, sin puntos ni guion(si termina en K, reemplace por 1): "))
+    trut.append(rut)
+
+  if op == 2:
+    print("Departamentos dispomnibles (sin X):")
+    print("")
+    print(f"{pisos[0]} \n{pisos[1]} \n{pisos[2]} \n{pisos[3]} \n{pisos[4]} \n{pisos[5]} \n{pisos[6]} \n{pisos[7]} \n{pisos[8]} \n{pisos[9]}")
+
+  if op == 3:
+
+    print("Listado de compradores segun RUT:")
+    print("")
+    trut.sort(reverse = True)
+    print(trut)
+
+  if op == 4:
+    print(f"El total es de: {t}")
+
+  if op==5:
+    print("Muchas gracias por usar nuestro programa.")
+    print("Hecho por: Nicolás González")
+    print("Fecha de creación: 12/07/2023")
